@@ -2,6 +2,10 @@
 
 A Next.js web application that uses LLM (Grok-4-Fast) to automatically correct spelling errors, grammar mistakes, typos, and restore missing words in text.
 
+## 🌐 Live Demo
+
+**Deployed on AI Builder**: https://auto-corrector.ai-builders.space/
+
 ## Features
 
 - **Smart Text Correction**: Corrects spelling, grammar, and typing errors
@@ -14,7 +18,7 @@ A Next.js web application that uses LLM (Grok-4-Fast) to automatically correct s
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - AI Builders API token
 
@@ -22,7 +26,7 @@ A Next.js web application that uses LLM (Grok-4-Fast) to automatically correct s
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/grapeot/auto-corrector.git
 cd auto-corrector
 ```
 
@@ -49,25 +53,6 @@ npm run dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Import your repository in [Vercel](https://vercel.com)
-3. Add environment variable `AI_BUILDER_TOKEN` in Vercel dashboard
-4. Deploy!
-
-### Other Platforms
-
-The app can be deployed to any platform that supports Next.js:
-- Netlify
-- Railway
-- Render
-- AWS Amplify
-
-Make sure to set the `AI_BUILDER_TOKEN` environment variable in your deployment platform.
-
 ## Technology Stack
 
 - **Next.js 15**: React framework with App Router
@@ -83,6 +68,48 @@ The app uses the V4 auto-corrector prompt which:
 3. Corrects spelling, grammar, and typing errors
 4. Provides detailed rationale for each correction
 
+## Deployment
+
+### AI Builder (Current Deployment)
+
+The app is deployed on AI Builder platform:
+- **URL**: https://auto-corrector.ai-builders.space/
+- **Status**: Live
+- **Deployment**: Automated via GitHub
+
+### Other Platforms
+
+The app can be deployed to any platform that supports Docker or Next.js:
+- **Vercel**: Import GitHub repo, add environment variables, deploy
+- **Railway**: `railway up` with environment variables
+- **Render**: Connect GitHub repo, use Dockerfile
+- **Fly.io**: `fly launch` and `fly deploy`
+
+See the Dockerfile for containerized deployment.
+
+## Project Structure
+
+```
+auto-corrector/
+├── app/
+│   ├── api/correct/route.ts    # API endpoint
+│   ├── page.tsx                 # Main UI
+│   └── layout.tsx               # App layout
+├── Dockerfile                   # Production Docker image
+├── docker-compose.yml           # Local development
+├── next.config.ts               # Next.js configuration
+└── package.json                 # Dependencies
+```
+
+## Environment Variables
+
+- `AI_BUILDER_TOKEN`: Your AI Builders API token (required)
+- `AI_BUILDERS_API_URL`: API endpoint (optional, defaults to production URL)
+
 ## License
 
 MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
