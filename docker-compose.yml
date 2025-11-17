@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  auto-corrector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - AI_BUILDER_TOKEN=${AI_BUILDER_TOKEN}
+      - AI_BUILDERS_API_URL=${AI_BUILDERS_API_URL:-https://space.ai-builders.com/backend/v1/chat/completions}
+    restart: unless-stopped
+
