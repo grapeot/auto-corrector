@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { NonExistentModule } from '@/non-existent-module'; // 故意引入不存在的模块，会导致构建失败
 
 export async function POST(request: NextRequest) {
   try {
