@@ -44,7 +44,7 @@ Format your response as valid JSON only, with no additional text before or after
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiToken}`,
+        'Authorization': `Bearer ${apiTokn}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
