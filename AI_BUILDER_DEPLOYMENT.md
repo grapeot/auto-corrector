@@ -68,4 +68,3 @@ If deployment fails or app doesn't work:
 ## 🎉 Success!
 
 Your auto-corrector app is being deployed to AI Builder! Once provisioning completes (5-10 minutes), it will be live and accessible to everyone.
-
