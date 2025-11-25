@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { NonExistentModule } from '@/non-existent-module'; // 故意引入不存在的模块，会导致构建失败
 
 export async function POST(request: NextRequest) {
   try {
@@ -45,7 +44,7 @@ Format your response as valid JSON only, with no additional text before or after
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiTokn}`,
+        'Authorization': `Bearer ${apiToken}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
